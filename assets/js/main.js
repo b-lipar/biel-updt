@@ -64,9 +64,7 @@
 				//$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
 				// NOTE: Disabled "use-middle" because it places a divider at 50%
 // which is wrong when nav items have different widths.
-
-
-			}
+		//	}
 
 	// Main.
 		var	delay = 325,
