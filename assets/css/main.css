@@ -1650,3 +1650,17 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+		
+		
+/* Make numbered lists left-aligned and clean */
+#main article ol {
+  list-style-position: outside;   /* numbers sit outside the text block */
+  padding-left: 1.4em;            /* controls how far numbers are from left */
+  margin-left: 0;
+  text-align: left;
+}
+
+#main article ol li {
+  padding-left: 0;
+  margin-left: 0;
+}
