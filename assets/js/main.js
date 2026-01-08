@@ -58,10 +58,13 @@
 			$nav_li = $nav.find('li');
 
 		// Add "middle" alignment classes if we're dealing with an even number of items.
-			if ($nav_li.length % 2 == 0) {
+			//if ($nav_li.length % 2 == 0) {
+			//
+				//$nav.addClass('use-middle');
+				//$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
+				// NOTE: Disabled "use-middle" because it places a divider at 50%
+// which is wrong when nav items have different widths.
 
-				$nav.addClass('use-middle');
-				$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
 
 			}
 
