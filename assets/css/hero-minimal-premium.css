@@ -1,0 +1,74 @@
+/*
+  Biel – Hero Typography Variant 01
+  Minimal Premium (typography-first)
+
+  Scope: ONLY the hero area of each section:
+  - Landing hero (#header)
+  - Article title (h2.major) and the first paragraph after it
+
+  No layout/structure changes to the rest of the site.
+*/
+
+:root{
+  --biel-ink: rgba(27, 31, 34, 0.90);
+  --biel-muted: rgba(27, 31, 34, 0.64);
+  --biel-hairline: rgba(27, 31, 34, 0.12);
+}
+
+/* ---------- Landing hero (top of page) ---------- */
+
+#header .content .inner{
+  text-align: left;
+}
+
+#header h1{
+  letter-spacing: 0.10em; /* tighter than template */
+  font-weight: 800;
+  line-height: 1.05;
+  font-size: clamp(2.05rem, 5.6vw, 2.75rem);
+}
+
+#header .content p{
+  max-width: 60ch;
+  color: var(--biel-muted) !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.70;
+  font-size: clamp(1.03rem, 1.45vw, 1.15rem);
+  margin-top: 0.85rem;
+}
+
+/* ---------- Section heroes (modal articles) ---------- */
+
+#main article h2.major{
+  letter-spacing: 0.12em; /* reduce the “spaced out” feel */
+  font-weight: 850;
+  color: var(--biel-ink);
+  line-height: 1.12;
+  font-size: clamp(1.55rem, 2.15vw, 2.05rem);
+  margin: 0 0 0.65rem;
+}
+
+/* Replace the default full-width border with a short “hairline” */
+#main article h2.major{
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+#main article h2.major::after{
+  content: "";
+  display: block;
+  width: 3.25rem;
+  height: 1px;
+  margin-top: 0.85rem;
+  background: var(--biel-hairline);
+}
+
+/* Lead paragraph: the first paragraph right after the title */
+#main article h2.major + p{
+  color: var(--biel-muted);
+  max-width: 62ch;
+  font-size: clamp(1.05rem, 1.25vw, 1.16rem);
+  line-height: 1.78;
+  margin: 1.05rem 0 1.55rem;
+}
