@@ -1,0 +1,274 @@
+:root{
+  --accent:#2b6cb0;
+  --bg:#f5f7fa;
+  --text:#1b1f22;
+  --panel:rgba(255,255,255,0.92);
+  --border:rgba(27,31,34,0.18);
+}
+
+/* Background: subtle institutional architecture with strong readability overlay */
+#bg:before{
+  background-image: url("../../images/architecture-bg4.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Light overlay for readability */
+#bg:after{
+  background-image: none !important;
+  background-color: rgba(255,255,255,0.88) !important;
+  filter: none !important;
+}
+
+/* Panels */
+#main article{
+  background-color:var(--panel);
+  color:var(--text);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+#main article h2.major{
+  border-bottom-color:var(--border);
+}
+#main article h2, #main article h3, #main article h4{
+  color:var(--text);
+}
+#header .content .inner{
+  text-align:left;
+}
+#header h1{
+  letter-spacing:0.15em;
+}
+#header p{
+  color:rgba(27,31,34,0.85);
+}
+
+/* Links */
+a{
+  color:var(--accent);
+  border-bottom-color:rgba(43,108,176,0.35);
+}
+a:hover{
+  border-bottom-color:rgba(43,108,176,0.75);
+}
+
+/* Logo ring */
+#header .logo{
+  border-color: rgba(27,31,34,0.25);
+}
+#header .logo .icon:before{
+ color: rgba(27,31,34,0.65) !important;
+}
+
+/* Simple button system (Dimension doesn't expose a strong primary by default) */
+a.button, .button, input[type="submit"], input[type="button"], button{
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
+  display:inline-block;
+  padding:0 1.25rem;
+  line-height:2.75rem;
+  height:2.75rem;
+  border-radius:0.5rem;
+  border:1px solid rgba(43,108,176,0.55);
+  color:var(--accent);
+  text-decoration:none;
+  background:transparent;
+  font-weight:600;
+  letter-spacing:0.05em;
+  cursor:pointer;
+}
+a.button:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover{
+  background:rgba(43,108,176,0.08);
+}
+a.button.primary, .button.primary, input[type="submit"].primary{
+  background:var(--accent);
+  color:#fff !important;
+  border-color:var(--accent);
+}
+a.button.primary:hover, .button.primary:hover, input[type="submit"].primary:hover{
+  filter:brightness(0.96);
+}
+
+/* Language switcher */
+.lang-switch{
+  display:flex;
+  gap:0.6rem;
+  justify-content:center;
+  margin: 0.75rem 0 0 0;
+  font-size:0.85rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.lang-switch a{
+  border-bottom:none;
+  padding:0.25rem 0.5rem;
+  border-radius:0.4rem;
+  color:rgba(27,31,34,0.85);
+  box-shadow: inset 0 0 0 1px rgba(27,31,34,0.18);
+}
+.lang-switch a:hover{
+  background:rgba(43,108,176,0.08);
+  color:var(--text);
+}
+.lang-switch a.is-active{
+  color:#fff;
+  background:var(--accent);
+  box-shadow:none;
+}
+
+/* Make nav feel less "artsy" */
+#header nav ul{
+  text-transform:none;
+  letter-spacing:0.06em;
+}
+
+/* Base text on light background */
+body, input, select, textarea {
+  color: var(--text);
+}
+/* Icons border */
+ul.icons li a {
+  box-shadow: inset 0 0 0 1px var(--border);
+  color: rgba(27,31,34,0.9);
+}
+ul.icons li a:hover {
+  background-color: rgba(43,108,176,0.08);
+}
+ul.icons li a:active {
+  background-color: rgba(43,108,176,0.16);
+}
+
+/* Header lines */
+#header .content {
+  border-color: var(--border);
+}
+
+/* Article close button */
+#main .close:before {
+  color: rgba(27,31,34,0.75);
+}
+#main .close:hover:before {
+  color: rgba(27,31,34,0.95);
+}
+
+/* =====================================================
+   HERO READABILITY & CONTRAST – BIEL
+   ===================================================== */
+
+/* --- Hero readability panel --- */
+/* Hero panel: more transparent + blurred background behind */
+#header .content {
+  background: rgba(255, 255, 255, 0.50);
+  border: none;
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  /* blur the image BEHIND the panel */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* --- Hero typography --- */
+#header .content h1,
+#header .content h2,
+#header .content h3,
+#header .content p {
+  color: #1c2330 !important;
+}
+
+#header .content p {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+/* Navigation: transparent + blurred backdrop */
+#header nav ul li a {
+  background: rgba(255,255,255,0.45);
+  color: #1c2330 !important;
+  border: none !important;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#header nav ul li a:hover {
+  background: rgba(255,255,255,0.60);
+}
+
+/* Fallback: if backdrop-filter not supported, increase opacity for readability */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  #header .content {
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+#header nav ul li a:hover {
+  background: rgba(255,255,255,0.90);
+}
+
+/* --- Stronger primary CTA --- */
+#header .button.primary,
+#header input[type="submit"].primary,
+#header input[type="reset"].primary,
+#header input[type="button"].primary,
+#header button.primary,
+#header .actions .primary {
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+
+/* =====================================================
+   Fade-in on load (dark -> background), including image
+   ===================================================== */
+
+/* Ensure bg layers can animate */
+#bg:before,
+#bg:after {
+  transition: opacity 1.2s ease;
+  will-change: opacity;
+}
+
+/* Start dark while loading */
+body.is-preload #bg:before { opacity: 0; }
+body.is-preload #bg:after  { opacity: 1; background-color: rgba(0,0,0,0.85) !important; }
+
+/* Fade to your normal background after preload */
+body:not(.is-preload) #bg:before { opacity: 1; }
+body:not(.is-preload) #bg:after  { opacity: 1; background-color: rgba(255,255,255,0.90) !important; }
+
+/* =====================================================
+   Robust fade-in: start dark, then fade to background
+   ===================================================== */
+
+/* Background image + light overlay (always visible) */
+#bg:before {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
+    url("../images/architecture-bg.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  opacity: 1 !important;
+}
+
+/* Dark curtain: DEFAULT = visible */
+#bg:after {
+  background-image: none !important;
+  background-color: rgba(0,0,0,0.85) !important;
+
+  /* Start visible (important) */
+  opacity: 1 !important;
+
+  /* Animate the fade-out */
+  transition: opacity 1.4s ease !important;
+  will-change: opacity;
+}
+
+/* After preload ends, fade the curtain away */
+body:not(.is-preload) #bg:after {
+  opacity: 0 !important;
+}
+
