@@ -1,0 +1,66 @@
+/*
+  Biel – Hero Typography Variant 03
+  Glass / Soft Card (lux feel, still typography-first)
+  Hero-only: landing header + article title + lead paragraph
+*/
+
+:root{
+  --biel-ink: rgba(27,31,34,.92);
+  --biel-muted: rgba(27,31,34,.64);
+  --biel-hairline: rgba(27,31,34,.12);
+  --biel-glass: rgba(255,255,255,.62);
+}
+
+/* Landing hero (top of page) */
+#header .content .inner{ text-align:left; }
+#header h1{
+  letter-spacing:.10em;
+  font-weight:900;
+  line-height:1.03;
+  font-size:clamp(2.05rem,5.6vw,2.85rem);
+  margin-bottom:.35rem;
+}
+#header .content p{
+  max-width:60ch;
+  color:var(--biel-muted) !important;
+  font-weight:520;
+  letter-spacing:.02em;
+  line-height:1.72;
+  font-size:clamp(1.03rem,1.45vw,1.15rem);
+  margin-top:.85rem;
+}
+
+/* Section hero (modal articles) */
+#main article h2.major{
+  border-bottom:none;
+  position:relative;
+  letter-spacing:.11em;
+  font-weight:900;
+  color:var(--biel-ink);
+  line-height:1.10;
+  font-size:clamp(1.55rem,2.15vw,2.05rem);
+  margin:0 0 .65rem;
+
+  /* soft glass header panel */
+  padding:.95rem 1.05rem .85rem;
+  border-radius:16px;
+  background:var(--biel-glass);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(27,31,34,.10);
+}
+#main article h2.major::after{
+  content:"";
+  display:block;
+  width:3.25rem;
+  height:1px;
+  margin-top:.85rem;
+  background:var(--biel-hairline);
+}
+#main article h2.major + p{
+  color:var(--biel-muted);
+  max-width:62ch;
+  font-size:clamp(1.05rem,1.25vw,1.16rem);
+  line-height:1.78;
+  margin:1rem 0 1.55rem;
+}

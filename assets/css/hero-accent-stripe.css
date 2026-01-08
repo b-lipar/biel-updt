@@ -1,0 +1,80 @@
+/*
+  Biel – Hero Typography Variant 02
+  Accent Stripe (strong hierarchy)
+  Hero-only: landing header + article title + lead paragraph
+*/
+
+:root{
+  --biel-ink: rgba(27,31,34,.92);
+  --biel-muted: rgba(27,31,34,.64);
+  --biel-hairline: rgba(27,31,34,.12);
+}
+
+/* Landing hero */
+#header .content .inner{ text-align:left; }
+#header h1{
+  letter-spacing:.09em;
+  font-weight:900;
+  line-height:1.03;
+  font-size:clamp(2.05rem,5.6vw,2.8rem);
+  margin-bottom:.35rem;
+}
+#header .content p{
+  position:relative;
+  padding-left:.95rem;
+  max-width:60ch;
+  color:var(--biel-muted) !important;
+  font-weight:520;
+  letter-spacing:.02em;
+  line-height:1.72;
+  font-size:clamp(1.03rem,1.45vw,1.15rem);
+  margin-top:.85rem;
+}
+#header .content p::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.25rem;
+  bottom:.25rem;
+  width:3px;
+  border-radius:999px;
+  background:var(--accent,#2b6cb0);
+}
+
+/* Section hero (each article) */
+#main article h2.major{
+  position:relative;
+  padding-left:1.05rem;
+  letter-spacing:.09em;
+  font-weight:900;
+  color:var(--biel-ink);
+  line-height:1.10;
+  font-size:clamp(1.6rem,2.25vw,2.1rem);
+  margin:0 0 .55rem;
+  border-bottom:none;
+}
+#main article h2.major::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.15rem;
+  bottom:.15rem;
+  width:3px;
+  border-radius:999px;
+  background:var(--accent,#2b6cb0);
+}
+#main article h2.major::after{
+  content:"";
+  display:block;
+  width:3rem;
+  height:1px;
+  margin-top:.85rem;
+  background:var(--biel-hairline);
+}
+#main article h2.major + p{
+  color:var(--biel-muted);
+  max-width:62ch;
+  font-size:clamp(1.05rem,1.25vw,1.16rem);
+  line-height:1.78;
+  margin:1rem 0 1.5rem;
+}
